@@ -1,8 +1,8 @@
 pipeline {
 
-  environment {
-    registry = "192.168.1.81:5000/justme/myweb"
-    dockerImage = ""
+    environment {
+    registry = "docker_hub_account/repository_name"
+    registryCredential = 'dockerhub'
   }
 
   agent any
@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/justmeandopensource/playjenkins.git'
+        git 'https://github.com/dendi/playjenkins.git'
       }
     }
 
