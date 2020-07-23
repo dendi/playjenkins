@@ -16,9 +16,16 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: 192.168.1.81:5000/justme/myweb:1
+      - image: nginx:1.14.2
         imagePullPolicy: Always
         name: myweb
+        resources:
+            limits:
+              cpu: 50m
+              memory: 100M
+            requests:
+              cpu: 20m
+              memory: 50M
 
 ---
 apiVersion: v1
